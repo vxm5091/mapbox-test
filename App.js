@@ -22,8 +22,7 @@ import MapboxGL, {MapView, Camera} from '@react-native-mapbox-gl/maps';
 const axios = require('axios').default;
 
 // ! update access token
-const ACCESS_TOKEN =
-  'pk.eyJ1IjoiYnVkZHljbyIsImEiOiJja3ZxOGc0OHJkZnlzMnd0OW5zdmM4aWJiIn0.amOqwlfrEQ2rVzsByIU3Jw';
+const ACCESS_TOKEN = '';
 
 MapboxGL.setAccessToken(ACCESS_TOKEN);
 
@@ -56,7 +55,6 @@ const App = () => {
 
     const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchParam}.json`;
 
-    // await axios(url, {params}, timeout)
     await axios(url, {params}, timeout)
       .then(res => res.data.features)
       .then(data => {
